@@ -46,7 +46,7 @@ const BorderAndSwapButton = ({}) => {
   );
 };
 
-const TradeBoxLine = ({ instruction, currency, gridArea, id }) => {
+const TradeBoxLine = ({ instruction, currency, gridArea, id, buySet }) => {
   // hover
   const [hover, setHover] = useState(false);
   return (
@@ -68,7 +68,7 @@ const TradeBoxLine = ({ instruction, currency, gridArea, id }) => {
         onMouseLeave: () => setHover(false),
         onClick: () => {
           if (id === "Buy") {
-            console.log("Buy");
+            buySet(true);
           }
         },
       }}
@@ -108,7 +108,7 @@ const TradeBoxLine = ({ instruction, currency, gridArea, id }) => {
   );
 };
 
-const TradeBox = ({}) => {
+const TradeBox = ({ buySet }) => {
   return (
     <div
       id=""
@@ -147,6 +147,7 @@ const TradeBox = ({}) => {
             currency: "BTC",
             gridArea: "line1",
             id: "Buy",
+            buySet,
           }}
         />
         <TradeBoxLine
@@ -155,6 +156,7 @@ const TradeBox = ({}) => {
             currency: "ETH",
             gridArea: "line2",
             id: "PayWith",
+            buySet,
           }}
         />
       </div>
