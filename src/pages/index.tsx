@@ -22,24 +22,35 @@ const Homepage = () => {
 
         {/* Title */}
         <Title />
+        <div id="column-container" className="flex" {...{ style: {} }}>
+          <div id="column-1" className="" {...{ style: {} }}>
+            <Graph />
+            <Stats />
+          </div>
 
-        {/* block1 */}
-        <div className="flex justify-between mb-4">
-          {/* Graph Placeholder */}
-          <Graph />
-
-          {/* Trade Placeholder */}
-          <TradeComponent />
+          <div id="column-2" className="" {...{ style: {} }}>
+            <TradeComponent />
+            <Trending />
+          </div>
         </div>
+
+        {/* block 1 */}
+        {/* <div className="flex justify-between mb-4"> */}
+        {/* Graph Placeholder */}
+        {/* <Graph /> */}
+
+        {/* Trade Placeholder */}
+        {/* <TradeComponent /> */}
+        {/* </div> */}
 
         {/* block 2 */}
-        <div className="flex justify-between">
-          {/* Stats Placeholder */}
-          <Stats />
+        {/* <div className="flex justify-between"> */}
+        {/* Stats Placeholder */}
+        {/* <Stats /> */}
 
-          {/* Trending Placeholder */}
-          <Trending />
-        </div>
+        {/* Trending Placeholder */}
+        {/* <Trending /> */}
+        {/* </div> */}
       </div>
     </div>
   );
