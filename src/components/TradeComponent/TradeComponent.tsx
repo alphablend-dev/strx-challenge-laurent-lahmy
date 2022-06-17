@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Amount from "./Amount";
+import AssetSelection from "./AssetSelection";
 import BuyButton from "./BuyButton";
 import BuySell from "./BuySell";
 import TradeBox from "./TradeBox";
@@ -54,18 +55,17 @@ const TradeComponent = ({}) => {
   return (
     <animated.div
       id="TradeComponent"
-      className="flex justify-center items-center w-[380px] min-w-[380px] bg-white rounded-xl border text-gray-4 border-gray-6 mb-4 overflow-hidden"
+      className="flex justify-center items-center bg-white rounded-xl border text-gray-4 border-gray-6 mb-4 overflow-hidden"
       {...{
         style: {
           height,
-          minWidth: "380px",
           justifyContent: "flex-start",
         },
       }}
     >
       <animated.div
         id="swipe-container"
-        className="flex w-full h-full"
+        className="flex w-[380px] h-full"
         {...{
           style: {
             marginLeft,
@@ -73,13 +73,7 @@ const TradeComponent = ({}) => {
         }}
       >
         <TradeGrid {...{ buySet }} />
-        <div
-          id=""
-          className="w-[380px] min-w-[380px] bg-green-1"
-          {...{ style: {} }}
-        >
-          hello
-        </div>
+        <AssetSelection {...{ buySet }} />
       </animated.div>
     </animated.div>
   );
