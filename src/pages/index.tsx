@@ -2,7 +2,7 @@
  * @component
  */
 
-import TradeComponent from "@/components/TradeComponent";
+import TradeComponent from "@/components/TradeComponent/TradeComponent";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Header from "@/components/Header";
 import Title from "@/components/Title";
