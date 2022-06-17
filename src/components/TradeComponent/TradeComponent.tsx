@@ -14,11 +14,12 @@ const TradeGrid = ({}) => {
           display: "grid",
           gridTemplate: `
             "buy-sell"
-            "amount"
+            "amount" 1fr
             "wallet"
             "tradeBox"
             "buyButton"
           `,
+          gap: "10px",
         },
       }}
     >
