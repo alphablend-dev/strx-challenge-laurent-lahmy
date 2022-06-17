@@ -1,29 +1,9 @@
 import Amount from "./Amount";
+import BuyButton from "./BuyButton";
 import BuySell from "./BuySell";
+import TradeBox from "./TradeBox";
 import Wallet from "./Wallet";
 
-const BuyButton = ({}) => {
-  return (
-    <div
-      id="BuyButton"
-      className=""
-      {...{
-        style: {},
-      }}
-    />
-  );
-};
-const TradeBox = ({}) => {
-  return (
-    <div
-      id="TradeBox"
-      className=""
-      {...{
-        style: {},
-      }}
-    />
-  );
-};
 const TradeGrid = ({}) => {
   return (
     <div
