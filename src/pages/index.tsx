@@ -22,7 +22,11 @@ const Homepage = () => {
 
         {/* Title */}
         <Title />
-        <div id="column-container" className="flex" {...{ style: {} }}>
+        <div
+          id="column-container"
+          className="flex  space-x-4"
+          {...{ style: {} }}
+        >
           <div id="column-1" className="" {...{ style: {} }}>
             <Graph />
             <Stats />
