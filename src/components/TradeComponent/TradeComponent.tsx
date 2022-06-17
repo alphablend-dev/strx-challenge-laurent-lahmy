@@ -1,5 +1,6 @@
 import Amount from "./Amount";
 import BuySell from "./BuySell";
+import Wallet from "./Wallet";
 
 const BuyButton = ({}) => {
   return (
@@ -16,17 +17,6 @@ const TradeBox = ({}) => {
   return (
     <div
       id="TradeBox"
-      className=""
-      {...{
-        style: {},
-      }}
-    />
-  );
-};
-const Wallet = ({}) => {
-  return (
-    <div
-      id="Wallet"
       className=""
       {...{
         style: {},
