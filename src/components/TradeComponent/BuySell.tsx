@@ -17,6 +17,7 @@ const BuySell = ({}) => {
         "buy sell ."
         / auto auto 1fr
       `,
+            gap: "16px",
           },
         }}
       >
@@ -41,6 +42,9 @@ const BuySell = ({}) => {
             className="h-[2px] bg-gray-1 mt-[2px] rounded"
             {...{ style: {} }}
           />
+        </div>
+        <div id="" className="" {...{ style: {} }}>
+          Sell
         </div>
       </div>
     </div>
