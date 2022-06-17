@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const BorderAndSwapButton = ({}) => {
   return (
     <>
@@ -44,9 +46,33 @@ const BorderAndSwapButton = ({}) => {
   );
 };
 
-const TradeBoxLine = ({ instruction, currency }) => {
+const TradeBoxLine = ({ instruction, currency, gridArea, id }) => {
+  // hover
+  const [hover, setHover] = useState(false);
   return (
-    <>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div
+      className={`h-full cursor-pointer ${hover ? `bg-gray-8` : ``}`}
+      style={{
+        gridArea,
+        display: "grid",
+        gridTemplate: `
+             "instruction currency . arrow"
+             / 84px auto 1fr auto
+           `,
+        columnGap: "20px",
+        placeItems: "center start",
+      }}
+      {...{
+        onMouseEnter: () => setHover(true),
+        onMouseLeave: () => setHover(false),
+        onClick: () => {
+          if (id === "Buy") {
+            console.log("Buy");
+          }
+        },
+      }}
+    >
       <div id="" className="pl-4" {...{ style: {} }}>
         {instruction}
       </div>
@@ -63,7 +89,7 @@ const TradeBoxLine = ({ instruction, currency }) => {
           },
         }}
       >
-        <div className="h-5 w-5 border border-gray-6 rounded-full" />
+        <div className="h-5 w-5 border border-gray-6 rounded-full bg-white" />
         <div>{currency}</div>
       </div>
       <div />
@@ -78,7 +104,7 @@ const TradeBoxLine = ({ instruction, currency }) => {
           <path d="M1 1L8 8L1 15" stroke="#191919" />
         </svg>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -100,26 +126,37 @@ const TradeBox = ({}) => {
     >
       <div
         id="TradeBox"
-        className="w-full  border border-gray-6  text-gray-1"
+        className="w-full  border border-gray-6  text-gray-1 overflow-hidden"
         {...{
           style: {
             gridArea: "center",
             height: "131px",
             display: "grid",
             gridTemplate: `
-          "buy BTC . arrow1"
-          "payWith ETH . arrow2"
-          / auto auto 1fr auto
-        `,
-            columnGap: "20px",
+            "line1"
+            "line2"
+            `,
             borderRadius: "10px",
             alignItems: "center",
-            // placeContent: "center",
           },
         }}
       >
-        <TradeBoxLine {...{ instruction: "Buy", currency: "BTC" }} />
-        <TradeBoxLine {...{ instruction: "Pay with", currency: "ETH" }} />
+        <TradeBoxLine
+          {...{
+            instruction: "Buy",
+            currency: "BTC",
+            gridArea: "line1",
+            id: "Buy",
+          }}
+        />
+        <TradeBoxLine
+          {...{
+            instruction: "Pay with",
+            currency: "ETH",
+            gridArea: "line2",
+            id: "PayWith",
+          }}
+        />
       </div>
       <BorderAndSwapButton />
     </div>
